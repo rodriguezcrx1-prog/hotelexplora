@@ -15,6 +15,7 @@
         body {
             background-color: #fff;
             color: #111;
+            overflow-x: hidden;
         }
 
         /* Cabecera Principal */
@@ -25,6 +26,8 @@
             align-items: center;
             padding: 22px 50px;
             border-bottom: 1px solid #222;
+            flex-wrap: wrap;
+            gap: 15px;
         }
 
         .logo {
@@ -40,6 +43,7 @@
             gap: 28px;
             font-size: 13px;
             font-weight: 500;
+            flex-wrap: wrap;
         }
 
         nav ul li a {
@@ -63,7 +67,7 @@
             border-radius: 2px;
         }
 
-        /* Sección Hero - Imagen Atacama Real */
+        /* Sección Hero */
         .hero {
             background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1547234935-80c7145ec969?q=80&w=1920&auto=format&fit=crop') no-repeat center center/cover;
             height: 75vh;
@@ -102,13 +106,19 @@
             color: #000;
             display: flex;
             justify-content: center;
-            gap: 45px;
-            padding: 18px 0;
+            gap: 30px;
+            padding: 18px 20px;
             font-size: 12px;
             font-weight: 600;
             letter-spacing: 1px;
             border-top: 1px solid #ddd;
             border-bottom: 1px solid #eee;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .sub-nav::-webkit-scrollbar {
+            display: none;
         }
 
         .sub-nav a {
@@ -433,6 +443,56 @@
             align-items: center;
             font-size: 13px;
         }
+
+        /* ==========================================
+           DISEÑO RESPONSIVO PARA CELULARES (Móviles)
+           ========================================== */
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            nav ul {
+                display: none; /* Oculta menú principal largo en celulares para evitar desbordes */
+            }
+
+            .hero {
+                height: 60vh;
+                padding: 0 20px 40px 20px;
+            }
+
+            .hero-content h1 {
+                font-size: 36px;
+            }
+
+            .rooms-grid, .features-grid, .footer-grid {
+                grid-template-columns: 1fr; /* Todo pasa a 1 sola columna ordenada */
+                gap: 25px;
+            }
+
+            .section-block, .section-block.reverse {
+                flex-direction: column;
+                gap: 30px;
+                padding: 0 20px;
+            }
+
+            .photo-gallery {
+                grid-template-columns: repeat(2, 1fr); /* Galería de 2 columnas en celular */
+            }
+
+            .footer-grid {
+                padding: 0 10px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -613,11 +673,11 @@
     <!-- Banner CTA -->
     <div class="cta-banner">
         <h2>Reserva tu viaje por el Desierto de Atacama.</h2>
-        <a href="https://wa.me/56956203450?text=Hola,%20quiero%20consultar%20la%20disponibilidad." class="btn-black" target="_blank" rel="noopener noreferrer">CONSULTA LA DISPONIBILIDAD</a>
+        <a href="https://wa.me/56977219193?text=Hola,%20quiero%20consultar%20la%20disponibilidad." class="btn-black" target="_blank" rel="noopener noreferrer">CONSULTA LA DISPONIBILIDAD</a>
     </div>
 
     <!-- Botón Flotante de WhatsApp Animado (Titilando) -->
-    <a href="https://wa.me/56956203450?text=Hola,%20deseo%20hablar%20con%20un%20asesor." class="whatsapp-float" target="_blank" rel="noopener noreferrer" title="Contáctanos por WhatsApp">
+    <a href="https://wa.me/56977219193?text=Hola,%20deseo%20hablar%20con%20un%20asesor." class="whatsapp-float" target="_blank" rel="noopener noreferrer" title="Contáctanos por WhatsApp">
         💬
     </a>
 
